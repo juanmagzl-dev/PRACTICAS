@@ -1,0 +1,69 @@
+body{
+    background-color: black;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 100px;
+}
+
+section{
+    columns: 2;
+    padding: 16px 12px;
+    column-gap: 32px;
+}
+
+section img{
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+
+    /* animacion reveal */
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    padding: 16px;
+    margin: 0;
+    width: 100%;
+    /* sticky !fixed -> no se sobre pone en las imagenes */
+    position: sticky;
+    top: 0;
+    left: 0;
+
+
+    /* animación */
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+    z-index: 1;
+}
+
+/* 
+    ANIMACIÓN DEL H1 -> TITULO
+*/
+
+@keyframes enhance-header{
+    to{
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5px);
+        font-size: 18px;
+        color: black;
+    }
+}
+
+@keyframes reveal{
+    from{
+        opacity: 0;
+        translate: 0 100px;
+        scale: 0.3;
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}

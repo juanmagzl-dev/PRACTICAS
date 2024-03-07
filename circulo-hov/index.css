@@ -1,0 +1,151 @@
+.pulser{
+    width: 50px;
+    height: 50px;
+    background-color:  blue;
+    border-radius: 100%;
+    position: relative;
+    transition-duration: 1.5s;
+    /* especificar la transicion que quieres */
+    transition-property: background-color,scale;
+    /* tranasicion-> timing */
+    transition-timing-function: linear; /*la que tenemos por defecto*/
+    /* animacion lento -> rápido */
+    transition-timing-function: ease-in;
+    /* animacion rapido -> lento */
+    transition-timing-function: ease-out;
+    /* animacion rapido en el centro */
+    transition-timing-function: ease-in-out;
+    /* animacion igual -> empieza ms rápido */
+    transition-timing-function: ease;
+    /* pasos para utilizar la animacion */
+    transition-timing-function: steps(5);
+
+    /* delay -> tiempo que dura en empezar */
+    transition-delay: 200ms;
+    /* 
+        forma corta de hacer TRANSITION
+        1. propiedades
+        2. segundos
+        3. timing function
+        4. delay
+    */
+    transition: background-color 300ms linear,
+                scale 500ms ease-in-out,
+                box-shadow 1s ease;
+    /* animar todo con all */
+    transition: all 300ms ease-in-out;
+    animation: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.pulser:hover{
+    scale: 2;
+    background-color: blueviolet;
+    box-shadow: 0 0 10px blueviolet;
+}
+
+/* 
+    media query para desactivar animaciones para el usuario
+*/
+@media (prefers-reduced-motion: reduce){
+    .pulser{
+        transition: none;
+    }
+}
+
+
+
+
+
+/* 
+    fotogramas -> keyframes
+*/
+
+/* seudo elemento para la animacion */
+
+.pulser::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: aqua;
+    z-index: -1;
+
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    /* cuantas veces se reproduce */
+    animation-iteration-count: infinite;
+    /* direccion */
+    /* animation-direction: reverse; */
+}
+
+@keyframes pulse{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        scale: 2;
+        opacity: 40%;
+    }
+
+    100%{
+        opacity: 0.6;
+    }
+}
+
+@keyframes move{
+    /* estado inicial animacion */
+    /* puedes quitar(siempre que sea por defecto) el estado inicial(from)-> porque sabe cual es el destino */
+    from{
+        transform: translateY(0px);
+    }
+
+    /* estado final animacion */
+    to{
+        transform: translateY(100px);
+    }
+}
+
+
+/* 
+    PAUSAR LAS ANIMACIONES
+*/
+
+.pulser:hover{
+    animation-play-state: paused;
+
+}
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 50vh;
+}
+
+
+/* 
+
+    TRUCAZO PARA EL HOVER CON &
+
+*/
+
+.pulser{
+    width: 50px;
+    height: 50px;
+    background-color:  blue;
+    border-radius: 100%;
+    position: relative;
+    transition-duration: 1.5s;
+
+    &:hover{
+        background-color: blueviolet;
+        box-shadow: 0 0 10px blueviolet;
+    }
+}
