@@ -1,0 +1,26 @@
+span{
+    margin: 20px auto;
+    display: block;
+    font-family: monospace;
+    border-right: 4px solid;
+    white-space: nowrap;
+    /* caracteres del texto */
+    width: 19ch;
+
+    animation: write 3s steps(19),
+              blink 0.5s infinite step-end alternate;
+
+    overflow: hidden;
+}
+
+@keyframes write {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
