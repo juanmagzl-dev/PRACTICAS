@@ -31,3 +31,12 @@
 
 > [!NOTE]
 > Al hacer scroll el titulo hace efecto sticky(no fixed) y van apareciendo las imágenes
+
+--
+
+## TITULO-PROGRESS
+
+![EJEMPLO TITULO-PROGRESS](image-4.png)
+
+> [!NOTE]
+> Texto progress con css y keyframes
