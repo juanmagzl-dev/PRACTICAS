@@ -59,10 +59,11 @@
   
   .sidebar.active .sidebar-content {
     display: block;
+    padding-top: 50px; /* Ancho expandido de la barra lateral */
   }
   
   /* Ajusta el contenido principal cuando la barra lateral está abierta */
   .sidebar.active + .content {
-    margin-left: 200px; /* Ancho expandido de la barra lateral */
+    margin-left: 200px;
   }
   
