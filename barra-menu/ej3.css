@@ -60,9 +60,13 @@
     margin-left: 200px;
   }
 
+
+
 ul li{
   list-style: none;
 }
+
+
 .desplegable_prim{
     display: none;  
 }
