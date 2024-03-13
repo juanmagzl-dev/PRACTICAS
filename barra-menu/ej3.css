@@ -60,12 +60,14 @@
     margin-left: 200px;
   }
 
-
+ul li{
+  list-style: none;
+}
 .desplegable_prim{
     display: none;  
 }
 
 .clase:hover > .desplegable_prim{
     display: block;
-    padding: 0;
+    padding: 15px;
 }
