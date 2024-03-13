@@ -1,0 +1,68 @@
+/* Estilo base de la barra lateral */
+.sidebar {
+    height: 100%;
+    width: 50px; /* Ancho inicial de la barra lateral */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    transition: width 0.3s;
+  }
+  
+  /* Estilo del botón de alternancia */
+  .toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #111;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Estilo del contenido de la barra lateral */
+  .sidebar-content {
+    display: none;
+  }
+  
+  /* Estilo de los enlaces en la barra lateral */
+  .sidebar-content a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+  
+  /* Cambia el color de fondo del enlace cuando se pasa el ratón sobre él */
+  .sidebar-content a:hover {
+    background-color: #444;
+  }
+  
+  /* Estilo del contenido principal */
+  .content {
+    margin-left: 50px; /* Ancho inicial de la barra lateral */
+    padding: 16px;
+    transition: margin-left 0.3s;
+  }
+  
+  /* Estilo del encabezado dentro del contenido principal */
+  .content h2 {
+    color: #333;
+  }
+  
+  /* Muestra el contenido de la barra lateral cuando la barra lateral está abierta */
+  .sidebar.active {
+    width: 200px; /* Ancho expandido de la barra lateral */
+  }
+  
+  .sidebar.active .sidebar-content {
+    display: block;
+  }
+  
+  /* Ajusta el contenido principal cuando la barra lateral está abierta */
+  .sidebar.active + .content {
+    margin-left: 200px; /* Ancho expandido de la barra lateral */
+  }
+  
