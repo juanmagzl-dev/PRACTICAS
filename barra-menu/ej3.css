@@ -59,4 +59,13 @@
   .sidebar.active + .content {
     margin-left: 200px;
   }
-  
+
+
+.desplegable_prim{
+    display: none;  
+}
+
+.clase:hover > .desplegable_prim{
+    display: block;
+    padding: 0;
+}
